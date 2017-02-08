@@ -1,5 +1,9 @@
-using CameraUnits
+using CameraUnits, Unitful, FixedPointNumbers
 using Base.Test
 
-# write your own tests here
-@test 1 == 2
+@testset "CameraUnits" begin
+    x = 1cu"pco55"
+    @test uconvert(γe, x) == 0.46γe
+end
+
+nothing
